@@ -2,9 +2,9 @@ import csv
 
 class Firewall(object):
 
-    rules = {}
     #store rules in a dictionary of dictionaries
     def __init__(self, path):
+        self.rules = {}
         self.rules["inbound"] = {}
         self.rules["outbound"] = {}
         self.rules["inbound"]["tcp"] = {}
@@ -14,7 +14,7 @@ class Firewall(object):
 
         #https://realpython.com/python-csv/ on reminder how to go through csvs
         csv_file = open(path, mode = 'r', encoding='utf-8-sig')
-        #encoding was a weird bug fixed using stackoverflow
+        #^mode and encoding bug fixed using stackoverflow
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
             direction = row[0]
@@ -76,6 +76,8 @@ class Firewall(object):
             check_ip = int(check_ip.replace(".",""))
             #print(predash)
             #print(postdash)
+            #print(ip_rule)
+            #print(check_ip)
             #print(check_ip <= postdash & check_ip >= predash)
             #no idea why this bug is happening, caught using above print statement
             #for some reason have to do nested if statement instead of one with an &
