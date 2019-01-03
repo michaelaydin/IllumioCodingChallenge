@@ -1,7 +1,7 @@
 Illumio Coding Challenge
 
 a.  I tested my solution by creating a csv with the given rules, passing that in to an instatiated firewall, and checking the results    
-of the given test cases.  I also added some edge cases, but if I had more time I would've thought of more and fancier edge cases.
+of the given test cases.  I also added some edge cases, but if I had more time I would've thought of more and fancier edge cases.  
 b. I used a dictionary of dictionary of dictionaries to group the direction, protocol, port, and ip because dictionaries have an average 
 lookup time of O(1).  
 c. The dictionary system I used uses a lot of space so maye think of a different data strucutre to use that sacrifices some lookup time  
